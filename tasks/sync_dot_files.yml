@@ -1,0 +1,7 @@
+---
+- name: Sync dot files
+  with_items: "{{dotfiles}}"
+  file:
+    src: "{{playbook_dir}}/src/{{item}}"
+    dest: "~/.{{item}}"
+    state: link

@@ -1,0 +1,6 @@
+---
+- name: Remove symlink dotfiles
+  with_items: "{{dotfiles}}"
+  file:
+    path: "~/.{{item}}"
+    state: absent

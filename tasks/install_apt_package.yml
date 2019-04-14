@@ -1,0 +1,11 @@
+---
+- name: Install apt package
+  become: yes
+  apt:
+    name: "{{package}}"
+- name: Update apt package list
+  lineinfile:
+    dest: ./apt.yml
+    line: "- {{package}}"
+- name: Git commit apt package
+  shell: "git add apt.yml && git commit -m '[APT] Add {{package}}'"
