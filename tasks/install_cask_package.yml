@@ -1,0 +1,10 @@
+---
+- name: Install cask package
+  homebrew_cask:
+    name: "{{package}}"
+- name: Update cask package list
+  lineinfile:
+    dest: ./cask.yml
+    line: "- {{package}}"
+- name: Git commit cask package
+  shell: "git add cask.yml && git commit -m '[CASK] Add {{package}}'"

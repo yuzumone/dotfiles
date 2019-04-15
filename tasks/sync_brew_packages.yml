@@ -1,0 +1,4 @@
+---
+- name: Sync brew packages
+  homebrew:
+    name: "{{brew_packages}}"

@@ -5,6 +5,8 @@
   - dot_file.yml
   - apt.yml
   - yum.yml
+  - brew.yml
+  - cask.yml
   tasks:
   - include: tasks/sync_dot_files.yml
     tags: [sync-dot-files]
@@ -20,3 +22,11 @@
     tags: [sync-yum-packages]
   - include: tasks/install_yum_package.yml
     tags: [install-yum-package]
+  - include: tasks/sync_brew_packages.yml
+    tags: [sync-brew-packages]
+  - include: tasks/install_brew_package.yml
+    tags: [install-brew-package]
+  - include: tasks/sync_cask_packages.yml
+    tags: [sync-cask-packages]
+  - include: tasks/install_cask_package.yml
+    tags: [install-cask-package]

@@ -16,6 +16,10 @@ Command:
     install-apt [package]   add apt package
     sync-yum                sync yum packages
     install-ymu [package]   add yum package
+    sync-brew               sync homebrew packages
+    install-brew [package]  add homebrew package
+    sync-cask               sync homebrew cask packages
+    install-cask [package]  add homebrew cask package
     help                    print this
 
 Options:
@@ -92,6 +96,34 @@ case ${1} in
         ;; esac
         echo "\e[32mInstall ${2} of yum\e[m"
         ansible-playbook -i localhost, -c local playbook.yml --tags install-yum-package --extra-vars="package=${2}" --ask-sudo-pass
+    ;;
+
+    sync-brew)
+        ansible-playbook -i $HOST, -c local playbook.yml --tags sync-brew-packages
+    ;;
+
+    install-brew)
+        case ${2} in "")
+            echo "\e[31mRequire package name...\e[m"
+            usage
+            exit 1
+        ;; esac
+        echo "\e[32mInstall ${2} of homebrew\e[m"
+        ansible-playbook -i localhost, -c local playbook.yml --tags install-brew-package --extra-vars="package=${2}"
+    ;;
+
+    sync-cask)
+        ansible-playbook -i $HOST, -c local playbook.yml --tags sync-cask-packages
+    ;;
+
+    install-cask)
+        case ${2} in "")
+            echo "\e[31mRequire package name...\e[m"
+            usage
+            exit 1
+        ;; esac
+        echo "\e[32mInstall ${2} of homebrew cask\e[m"
+        ansible-playbook -i localhost, -c local playbook.yml --tags install-cask-package --extra-vars="package=${2}"
     ;;
 
     help|--help|-h|"")

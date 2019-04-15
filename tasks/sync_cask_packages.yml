@@ -1,0 +1,4 @@
+---
+- name: Sync cask packages
+  homebrew_cask:
+    name: "{{cask_packages}}"

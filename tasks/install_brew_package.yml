@@ -1,0 +1,11 @@
+---
+- name: Install brew package
+  homebrew:
+    name: "{{package}}"
+    update_homebrew: yes
+- name: Update brew package list
+  lineinfile:
+    dest: ./brew.yml
+    line: "- {{package}}"
+- name: Git commit brew package
+  shell: "git add brew.yml && git commit -m '[BREW] Add {{package}}'"
