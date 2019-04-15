@@ -1,0 +1,11 @@
+---
+- name: Install yum package
+  become: yes
+  yum:
+    name: "{{package}}"
+- name: Update yum package list
+  lineinfile:
+    dest: ./yum.yml
+    line: "- {{package}}"
+- name: Git commit apt package
+  shell: "git add yum.yml && git commit -m '[YUM] Add {{package}}'"

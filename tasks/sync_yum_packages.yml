@@ -1,0 +1,6 @@
+---
+- name: Sync yum packages
+  with_items: "{{yum_packages}}"
+  become: yes
+  yum:
+    name: "{{item}}"

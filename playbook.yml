@@ -4,6 +4,7 @@
   vars_files:
   - dot_file.yml
   - apt.yml
+  - yum.yml
   tasks:
   - include: tasks/sync_dot_files.yml
     tags: [sync-dot-files]
@@ -15,3 +16,7 @@
     tags: [sync-apt-packages]
   - include: tasks/install_apt_package.yml
     tags: [install-apt-package]
+  - include: tasks/sync_yum_packages.yml
+    tags: [sync-yum-packages]
+  - include: tasks/install_yum_package.yml
+    tags: [install-yum-package]
