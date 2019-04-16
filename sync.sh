@@ -15,7 +15,7 @@ Command:
     sync-apt                sync apt packages
     install-apt [package]   add apt package
     sync-yum                sync yum packages
-    install-ymu [package]   add yum package
+    install-yum [package]   add yum package
     sync-brew               sync homebrew packages
     install-brew [package]  add homebrew package
     sync-cask               sync homebrew cask packages
