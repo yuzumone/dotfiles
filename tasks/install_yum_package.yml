@@ -1,8 +1,14 @@
 ---
+- name: Install epel-release
+  become: yes
+  yum:
+    name: epel-release
+    state: present
 - name: Install yum package
   become: yes
   yum:
     name: "{{package}}"
+    enablerepo: epel
 - name: Update yum package list
   lineinfile:
     dest: ./yum.yml

@@ -1,6 +1,11 @@
 ---
-- name: Sync yum packages
-  with_items: "{{yum_packages}}"
+- name: Install epel-release
   become: yes
   yum:
-    name: "{{item}}"
+    name: epel-release
+    state: present
+- name: Sync yum packages
+  become: yes
+  yum:
+    name: "{{yum_packages}}"
+    enablerepo: epel
