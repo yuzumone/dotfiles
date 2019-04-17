@@ -1,2 +1,6 @@
 ---
 cask_packages:
+- alfred
+- emacs
+- google-japanese-ime
+- iterm2
