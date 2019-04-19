@@ -1,2 +1,13 @@
 ---
 apt_packages:
+- build-essential
+- fonts-noto-cjk
+- git
+- fish
+- libssl-dev
+- libreadline-dev
+- jq
+- tig
+- tmux
+- vim
+- zlib1g-dev
