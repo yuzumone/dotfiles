@@ -20,6 +20,8 @@ Command:
     install-brew [package]  add homebrew package
     sync-cask               sync homebrew cask packages
     install-cask [package]  add homebrew cask package
+    sync-yay                sync yay packages
+    install-yay [package]   add yay package
     help                    print this
 
 Options:
@@ -124,6 +126,19 @@ case ${1} in
         ;; esac
         echo "\e[32mInstall ${2} of homebrew cask\e[m"
         ansible-playbook -i localhost, -c local playbook.yml --tags install-cask-package --extra-vars="package=${2}"
+    ;;
+
+    sync-yay)
+        ansible-playbook -i $HOST, -c local playbook.yml --tags sync-yay-packages --ask-become-pass
+    ;;
+
+    install-yay)
+        case ${2} in "")
+            echo "\e[31mRequire package name...\e[m"
+            usage
+            exit 1
+        ;; esac
+        ansible-playbook -i localhost, -c local playbook.yml --tags install-yay-package --extra-vars="package=${2}"
     ;;
 
     help|--help|-h|"")

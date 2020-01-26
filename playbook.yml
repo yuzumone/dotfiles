@@ -7,6 +7,7 @@
   - yum.yml
   - brew.yml
   - cask.yml
+  - yay.yml
   tasks:
   - include: tasks/sync_dot_files.yml
     tags: [sync-dot-files]
@@ -30,3 +31,7 @@
     tags: [sync-cask-packages]
   - include: tasks/install_cask_package.yml
     tags: [install-cask-package]
+  - include: tasks/sync_yay_packages.yml
+    tags: [sync-yay-packages]
+  - include: tasks/install_yay_package.yml
+    tags: [install-yay-package]

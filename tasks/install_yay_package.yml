@@ -1,0 +1,14 @@
+---
+- name: Get username
+  command: whoami
+  changed_when: false
+  become: false
+  register: whoami
+- name: Install yay package
+  shell: "yay --noconfirm -S {{package}}"
+- name: Update yay package list
+  lineinfile:
+    dest: ./yay.yml
+    line: "- {{package}}"
+- name: Git commit apt package
+  shell: "git add yay.yml && git commit -m '[YAY] Add {{package}}'"

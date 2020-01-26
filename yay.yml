@@ -1,0 +1,9 @@
+---
+yay_packages:
+- rbenv
+- nkf
+- ghq
+- xclip
+- tmux
+- tig
+- gzip

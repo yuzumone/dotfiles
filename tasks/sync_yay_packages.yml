@@ -1,0 +1,11 @@
+---
+- name: Get username
+  command: whoami
+  changed_when: false
+  become: false
+  register: whoami
+- name: Install yay package
+  with_items: "{{yay_packages}}"
+  become: yes
+  become_user: "{{ whoami.stdout }}"
+  shell: "yay --noconfirm --needed -S {{item}}"
