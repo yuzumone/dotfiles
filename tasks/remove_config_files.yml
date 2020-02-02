@@ -1,0 +1,6 @@
+---
+- name: Remove symlink configfiles
+  with_items: "{{configfiles}}"
+  file:
+    path: "~/.config/{{item}}"
+    state: absent

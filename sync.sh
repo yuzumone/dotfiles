@@ -12,6 +12,9 @@ Command:
     sync-dotfile            sync dotfiles
     add-dotfile [dotfile]   add dotfile
     rm-dotfile              remove all dotfiles
+    sync-config-file        sync configfiles
+    add-config-file [dir]   add config file
+    rm-config-file          remove all configfiles
     sync-apt                sync apt packages
     install-apt [package]   add apt package
     sync-yum                sync yum packages
@@ -57,6 +60,36 @@ case ${1} in
             ansible-playbook -i $HOST, -c local playbook.yml --tags remove-dot-files
         else
             ansible-playbook -i $HOST, playbook.yml --tags remove-dot-files
+        fi
+    ;;
+
+    sync-config-file)
+        case ${2} in '--host') HOST=${3};; esac
+        if [ $HOST = localhost ]
+        then
+            ansible-playbook -i $HOST, -c local playbook.yml --tags sync-config-files
+        else
+            ansible-playbook -i $HOST, playbook.yml --tags sync-config-files
+        fi
+    ;;
+
+    add-config-file)
+        case ${2} in "")
+            echo "\e[31mRequire config dir name...\e[m"
+            usage
+            exit 1
+        ;; esac
+        echo "\e[32mAdd config file ${2}\e[m"
+        ansible-playbook -i localhost, -c local playbook.yml --tags add-config-file --extra-vars="config=${2}"
+    ;;
+
+    rm-config-file)
+        case ${2} in '--host') HOST=${3};; esac
+        if [ $HOST = localhost ]
+        then
+            ansible-playbook -i $HOST, -c local playbook.yml --tags remove-config-files
+        else
+            ansible-playbook -i $HOST, playbook.yml --tags remove-config-files
         fi
     ;;
 
