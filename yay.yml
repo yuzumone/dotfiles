@@ -7,3 +7,4 @@ yay_packages:
 - tmux
 - tig
 - gzip
+- fzf
