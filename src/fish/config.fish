@@ -1,12 +1,21 @@
-## rbenv init setting
-status --is-interactive; and source (rbenv init -|psub)
-
-## wsl
-set -x DISPLAY localhost:0.0
+## android
+set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk
+set --export ANDROID_HOME /opt/android-sdk
+set -gx PATH $ANDROID_HOME/tools $PATH
+set -gx PATH $ANDROID_HOME/tools/bin $PATH
+set -gx PATH $ANDROID_HOME/platform-tools $PATH
+set -gx PATH $ANDROID_HOME/emulator $PATH
 
 ## flutter
-set -x ANDROID_HOME /opt/android-sdk
-set PATH /opt/flutter/bin $PATH
+set -gx PATH /opt/flutter/bin $PATH
 
-# ghq
+## rbenv
+status --is-interactive; and source (rbenv init -|psub)
+
+## kawasaki theme
+set -g theme_display_time yes
+set -g theme_display_group no
+set -g theme_display_rw no
+
+## ghq
 bind \c] __ghq_repository_search
