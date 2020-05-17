@@ -1,10 +1,22 @@
 ---
 yay_packages:
-- rbenv
-- nkf
-- ghq
-- xclip
-- tmux
-- tig
-- gzip
+- android-platform
+- android-sdk
+- android-sdk-build-tools
+- android-sdk-platform-tools
+- dart
+- emacs
+- fish
+- freetype2-ultimate5
 - fzf
+- ghq
+- git
+- gzip
+- jdk8-openjdk
+- jq
+- nkf
+- rbenv
+- the_silver_searcher
+- tig
+- tmux
+- xclip
