@@ -24,8 +24,7 @@ if test -n $name
   set --export DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
   set --export GDK_SCALE 0.5
   set --export GDK_DPI_SCALE 2
-  alias h='history | fzf | perl -pe "chomp if eof" | read -lz result; and commandline -- $result; commandline -f repaint'
-  alias g='ghq list --full-path | fzf | read select; cd $select'
+  alias eme='emacs --display $DISPLAY'
 end
 
 ## ghq
