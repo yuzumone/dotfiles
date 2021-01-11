@@ -1,0 +1,8 @@
+---
+install: yum install -y %s
+package:
+- fish
+- git
+- jq
+- tig
+- tmux

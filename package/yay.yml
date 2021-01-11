@@ -1,5 +1,6 @@
 ---
-yay_packages:
+install: yay -S --needed %s
+package:
 - android-platform
 - android-sdk
 - android-sdk-build-tools

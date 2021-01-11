@@ -1,7 +1,0 @@
----
-yum_packages:
-- fish
-- git
-- jq
-- tig
-- tmux

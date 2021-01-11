@@ -1,7 +1,0 @@
----
-- name: Sync config files
-  with_items: "{{configfiles}}"
-  file:
-    src: "{{playbook_dir}}/src/{{item}}"
-    dest: "~/.config/{{item}}"
-    state: link
