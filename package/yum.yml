@@ -1,5 +1,9 @@
 ---
-install: yum install -y %s
+init:
+- sudo yum install -y epel-release
+- sudo wget -P /etc/yum.repo.d/ 'https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo'
+- sudo yum update -y
+install: sudo yum install -y %s --enablerepo=epel
 package:
 - fish
 - git

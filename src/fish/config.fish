@@ -18,6 +18,8 @@ status --is-interactive; and source (rbenv init -|psub)
 set -g theme_display_time yes
 set -g theme_display_group no
 set -g theme_display_rw no
+set -g theme_display_virtualenv no
+set -g __fish_prompt_hostname (hostname)
 
 ## wsl
 set name (uname -a | grep microsoft)

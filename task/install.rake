@@ -31,6 +31,9 @@ namespace :sync do
     desc "sync package use #{name}"
     task name do
       spec = YAML.load_file(f)
+      if spec['init']
+        spec['init'].each{|x| system(x)}
+      end
       cmd = spec['install'].split(/\s+/)
       if system(*cmd.flat_map { |c| c == '%s' ? spec['package'] : c })
         warn 'sync succeed.'
