@@ -19,16 +19,17 @@ set -g theme_display_time yes
 set -g theme_display_group no
 set -g theme_display_rw no
 set -g theme_display_virtualenv no
+set -g theme_display_time_format +%H:%M
 set -g __fish_prompt_hostname (hostname)
 
 ## wsl
 set name (uname -a | grep microsoft)
 if test -n $name
   set --export DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-  #set --export GDK_SCALE 0.5
-  #set --export GDK_DPI_SCALE 2
-  #alias eme='emacs --display $DISPLAY'
 end
 
 ## ghq
 bind \c] __ghq_repository_search
+
+## alias
+alias e='emacsclient -n'
