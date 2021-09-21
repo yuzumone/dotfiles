@@ -5,6 +5,8 @@ package:
 - android-sdk
 - android-sdk-build-tools
 - android-sdk-platform-tools
+- aspell
+- aspell-en
 - dart
 - emacs
 - fish
@@ -15,8 +17,12 @@ package:
 - gzip
 - jdk8-openjdk
 - jq
+- migemo-git
 - nkf
+- pyright
+- python
 - rbenv
+- ruby-build
 - the_silver_searcher
 - tig
 - tmux

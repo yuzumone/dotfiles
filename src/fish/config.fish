@@ -6,10 +6,8 @@ set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH $ANDROID_HOME/platform-tools $PATH
 set -gx PATH $ANDROID_HOME/emulator $PATH
 
-## flutter
-set -x PATH /opt/flutter/bin $PATH
+## dart
 set -x PATH $HOME/.pub-cache/bin $PATH
-set -x PATH /opt/dart-sdk/bin $PATH
 
 ## rbenv
 status --is-interactive; and source (rbenv init -|psub)
@@ -33,3 +31,4 @@ bind \c] __ghq_repository_search
 
 ## alias
 alias e='emacsclient -n'
+alias pubupgrade="pub global list | grep -v Git | awk '{print $1}' | xargs -n1 pub global activate"

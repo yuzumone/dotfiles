@@ -1,0 +1,6 @@
+---
+install: echo %s | xargs -n1 dart pub global activate
+package:
+- dhttpd
+- fvm
+- stagehand
