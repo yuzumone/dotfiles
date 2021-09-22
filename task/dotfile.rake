@@ -23,7 +23,7 @@ task :dot, %i[name] do |_, args|
   File.open(CUR + 'dot_files.yml', 'w') do |w|
     w << YAML.dump([*DOT_FILES, name].sort)
   end
-  system 'git add dot_file.yml'
+  system 'git add dot_files.yml'
   system "git commit -m '[#{name}] added'"
 end
 

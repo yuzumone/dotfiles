@@ -1,0 +1,58 @@
+" utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+" no backupfile
+set nobackup
+set noswapfile
+" autoreload file
+set autoread
+" open new file when unsaved changes
+set hidden
+" dispaly number
+set number
+" display cursor line
+set ruler
+set cursorline
+" enable backspace
+set backspace=indent,eol,start
+" display (,[
+set showmatch
+" enable color syntax
+syntax on
+" tab to space
+set expandtab
+set tabstop=4
+" copy and paste
+set clipboard+=unnamed
+set clipboard+=autoselect
+" beep
+set belloff=all
+" status line
+set laststatus=2
+" cmd
+set showcmd
+set wildmode=list:longest
+" slate theme
+colorscheme slate
+" search
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-h> <BackSpace>
+inoremap <C-d> <Del>
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
