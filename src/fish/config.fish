@@ -20,12 +20,6 @@ set -g theme_display_virtualenv no
 set -g theme_display_time_format +%H:%M
 set -g __fish_prompt_hostname (hostname)
 
-## wsl
-set name (uname -a | grep microsoft)
-if test -n $name
-  set --export DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-end
-
 ## ghq
 bind \c] __ghq_repository_search
 
