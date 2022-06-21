@@ -1,5 +1,0 @@
----
-install: gem install %s
-package:
-- bundler
-- solargraph

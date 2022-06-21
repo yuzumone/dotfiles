@@ -25,4 +25,9 @@ bind \c] __ghq_repository_search
 
 ## alias
 alias e='emacsclient -n'
-alias pubupgrade="pub global list | grep -v Git | awk '{print $1}' | xargs -n1 pub global activate"
+
+## wsl
+set name (uname -a | grep microsoft)
+if test -n $name
+  set --export BROWSER "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe /c start"
+end
