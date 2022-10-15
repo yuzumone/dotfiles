@@ -1,0 +1,8 @@
+[Unit]
+Description=Yet another SKK Japanese input method dictionary server
+
+[Service]
+ExecStart=yaskkserv2 --no-daemonize --listen-address 127.0.0.1 --google-japanese-input=notfound /usr/share/skk/dictionary.yaskkserv2
+
+[Install]
+WantedBy=default.target

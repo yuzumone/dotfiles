@@ -3,5 +3,6 @@ fontconfig,.config/fontconfig
 gemrc,.gemrc
 gitconfig,.gitconfig
 redpen,.config/redpen
+systemd,.config/systemd
 tmux.conf,.tmux.conf
 vimrc,.vimrc
