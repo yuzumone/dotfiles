@@ -23,7 +23,7 @@ clean: ## Remove all symlink.
 install: ## Install package.
 	$(call __require_ARG)
 	$(call __exist_ARG)
-	yay -S $(ARG)
+	yay -S --needed $(ARG)
 	echo $(ARG) >> $(PACKAGES) && sort -o $(PACKAGES) $(PACKAGES)
 
 sync: ## Sync package.
