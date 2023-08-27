@@ -1,3 +1,5 @@
+set -gx PATH $HOME/.bin $PATH
+
 ## android
 set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk
 set --export ANDROID_HOME /opt/android-sdk
@@ -7,10 +9,12 @@ set -gx PATH $ANDROID_HOME/platform-tools $PATH
 set -gx PATH $ANDROID_HOME/emulator $PATH
 
 ## dart
-set -x PATH $HOME/.pub-cache/bin $PATH
+set -gx PATH $HOME/.pub-cache/bin $PATH
 
 ## rbenv
-status --is-interactive; and source (rbenv init -|psub)
+if command -s rbenv > /dev/null
+    status --is-interactive; and source (rbenv init -|psub)
+end
 
 ## kawasaki theme
 set -g theme_display_time yes
