@@ -1,8 +1,8 @@
 fish,.config/fish
 fontconfig,.config/fontconfig
 gemrc,.gemrc
-gitconfig,.gitconfig
+git,.config/git
 redpen,.config/redpen
 systemd,.config/systemd
-tmux.conf,.tmux.conf
-vimrc,.vimrc
+tmux,.config/tmux
+vim,.config/vim
