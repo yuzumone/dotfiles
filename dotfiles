@@ -1,8 +1,16 @@
 fish,.config/fish
 fontconfig,.config/fontconfig
+foot,.config/foot
 gemrc,.gemrc
 git,.config/git
+onedrive-Personal,.config/onedrive-Personal
+onedrive-Work,.config/onedrive-Work
 redpen,.config/redpen
+sway,.config/sway
+swayimg,.config/swayimg
+swaylock,.config/swaylock
 systemd,.config/systemd
 tmux,.config/tmux
 vim,.config/vim
+waybar,.config/waybar
+xremap,.config/xremap

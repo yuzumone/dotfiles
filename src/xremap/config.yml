@@ -1,0 +1,35 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: Ctrl_R
+keymap:
+  - name: Default
+    application:
+      not: [emacs, foot]
+    remap:
+      # Cursor
+      Ctrl_R-b: { with_mark: left }
+      Ctrl_R-f: { with_mark: right }
+      Ctrl_R-p: { with_mark: up }
+      Ctrl_R-n: { with_mark: down }
+      # Forward/Backward word
+      M-b: { with_mark: C-left }
+      M-f: { with_mark: C-right }
+      # Beginning/End of line
+      Ctrl_R-a: { with_mark: home }
+      Ctrl_R-e: { with_mark: end }
+      # Beginning/End of file
+      M-Shift-comma: { with_mark: C-home }
+      M-Shift-dot: { with_mark: C-end }
+      # Delete
+      Ctrl_R-d: [delete, { set_mark: false }]
+      M-d: [C-delete, { set_mark: false }]
+      # Kill line
+      Ctrl_R-k: [Shift-end, C-x, { set_mark: false }]
+      # Cancel
+      Ctrl_R-g: [esc, { set_mark: false }]
+      # C-x YYY
+      Ctrl_R-x:
+        remap:
+          # C-x h (select all)
+          h: [C-home, C-a, { set_mark: true }]

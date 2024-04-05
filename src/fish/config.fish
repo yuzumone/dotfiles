@@ -1,3 +1,4 @@
+set -gx PATH $HOME/Android/Sdk $PATH
 set -gx PATH $HOME/.bin $PATH
 
 ## XDG Base Directory
@@ -5,6 +6,10 @@ set --export XDG_CONFIG_HOME $HOME/.config
 set --export XDG_CACHE_HOME $HOME/.cache
 set --export XDG_DATA_HOME $HOME/.local/share
 set --export XDG_STATE_HOME $HOME/.local/state
+
+## nnn
+set --export NNN_FIFO /tmp/nnn.fifo
+set --export NNN_PLUG 'p:preview-tui'
 
 ## dart
 set -gx PATH $HOME/.pub-cache/bin $PATH
