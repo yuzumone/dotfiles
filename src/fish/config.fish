@@ -31,14 +31,10 @@ set -g theme_display_virtualenv no
 set -g theme_display_time_format +%H:%M
 set -g __fish_prompt_hostname (hostname)
 
-## ghq
+## bind
 bind \c] __ghq_repository_search
+bind \ec __fzf_z
+bind \cv true
 
 ## alias
 alias e='emacsclient -n'
-
-## wsl
-set name (uname -a | grep microsoft)
-if test -n $name
-  set --export BROWSER "/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe /c start"
-end
